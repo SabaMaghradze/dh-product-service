@@ -14,3 +14,5 @@ spring:
 
 server:
   port: 8081
+
+#  username and password must correspond to docker-compose.yml's credentials.
