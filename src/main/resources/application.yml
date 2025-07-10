@@ -1,18 +1,5 @@
 spring:
   application:
     name: product-service
-  datasource:
-    url: jdbc:postgresql://localhost:5432/product
-    username: costigan
-    password: billyjr
-  jpa:
-    database: POSTGRESQL
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-
-server:
-  port: 8081
-
-#  username and password must correspond to docker-compose.yml's credentials.
+  config:
+    import: optional:configserver:http://localhost:8888
