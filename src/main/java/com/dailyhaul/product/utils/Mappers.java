@@ -3,10 +3,12 @@ package com.dailyhaul.product.utils;
 import com.dailyhaul.product.dto.ProductRequest;
 import com.dailyhaul.product.dto.ProductResponse;
 import com.dailyhaul.product.model.Product;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Mappers {
 
-    public static ProductResponse getProductResponse(Product product) {
+    public ProductResponse getProductResponse(Product product) {
         return new ProductResponse(product.getId(),
                 product.getName(),
                 product.getDescription(),
@@ -17,7 +19,7 @@ public class Mappers {
                 product.getActive());
     }
 
-    public static Product productReqToEnt(Product product, ProductRequest productRequest) {
+    public Product productReqToEnt(Product product, ProductRequest productRequest) {
 
         product.setName(productRequest.getName() != null ? productRequest.getName() : product.getName());
         product.setDescription(productRequest.getDescription() != null ? productRequest.getDescription() : product.getDescription());
